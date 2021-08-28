@@ -120,7 +120,7 @@ that are not usable on all distributions by default:
 
 - **User Namespaces**: This is available on most distros
   (the kernel option is `CONFIG_USER_NS`),
-  but Debian and Arch Linux disable this feature for regular users,
+  but Debian disable this feature for regular users,
   so the system administrator needs to enable it
   with `sudo sysctl -w kernel.unprivileged_userns_clone=1` or a respective entry
   in `/etc/sysctl.conf`.
@@ -267,6 +267,7 @@ the memory cgroup controller is disabled by default, and can be enabled by
 setting `cgroup_enable=memory` on the kernel command line, similar to
 `swapaccount=1` above.
 
+On Arch Linux you have to switch back to cgroup v1 by [setting this kernel parameter: `systemd.unified_cgroup_hierarchy=0`](https://wiki.archlinux.org/title/cgroups#Enable_cgroup_v1).
 
 ## Installation for Development
 
